@@ -1,0 +1,46 @@
+.delete-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vh, 20px);
+}
+
+.title {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-weight: 700;
+  color: #442F38;
+  margin: 0;
+}
+
+.message {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #2D2D3A;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(8px, 2vw, 12px);
+  margin-top: clamp(6px, 2vh, 8px);
+}
+
+.cancel-btn,
+.delete-btn {
+  height: clamp(32px, 5vh, 36px);
+  width: clamp(64px, 15vw, 76px);
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  color: white;
+  border-radius: clamp(8px, 2vw, 10px);
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color:   #442F38;
+  color: #F6E8D8;
+
+}
+
+.delete-btn {
+  background-color: #BA1B1D;
+}

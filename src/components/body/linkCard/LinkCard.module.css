@@ -1,0 +1,139 @@
+.link-card {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 2vw, 16px);
+  background-color: #FFFFFF;
+  border-radius: clamp(12px, 2vw, 14px);
+  padding: clamp(14px, 2vh, 18px);
+  margin-bottom: clamp(12px, 2vh, 14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.favicon {
+  width: clamp(32px, 5vw, 40px);
+  height: clamp(32px, 5vw, 40px);
+  border-radius: clamp(6px, 2vw, 8px);
+  flex-shrink: 0;
+}
+
+.link-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 1vh, 6px);
+  min-width: 0;
+}
+
+.link-title {
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  font-weight: 700;
+  color: #442f38;
+}
+
+.link-url {
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  color: #6C5CE7;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.link-url:hover {
+  text-decoration: underline;
+}
+
+.link-description {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: #442f38;
+  opacity: 0.8;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(6px, 1.5vw, 8px);
+  margin-top: clamp(4px, 1vh, 6px);
+}
+
+.tag {
+  font-size: clamp(0.65rem, 2vw, 0.75rem);
+  font-weight: 600;
+  color: white;
+  padding: clamp(3px, 1vh, 4px) clamp(8px, 2vw, 10px);
+  border-radius: 999px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.5vw, 8px);
+  flex-shrink: 0;
+}
+
+.edit-btn,
+.delete-btn {
+  height: clamp(32px, 5vh, 36px);
+  width: clamp(64px, 15vw, 76px);
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  color: white;
+  border-radius: clamp(8px, 2vw, 10px);
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #62AB37;
+}
+
+.delete-btn {
+  background-color: #BA1B1D;
+}
+
+@media (max-width: 720px) {
+  .link-card {
+    flex-wrap: wrap;
+  }
+
+  .action-buttons {
+    width: 100%;
+    flex-direction: row;
+    margin-top: clamp(3px, 1vh, 4px);
+  }
+
+  .edit-btn,
+  .delete-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .link-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .link-card-content {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    gap: clamp(8px, 2vw, 10px);
+    width: 100%;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .link-card {
+    padding: 12px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    height: 30px;
+    font-size: 0.7rem;
+  }
+}

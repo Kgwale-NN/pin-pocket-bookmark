@@ -1,0 +1,81 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 248, 240, 0.96);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid #442F38;
+  padding: clamp(12px, 3vh, 16px) 0;
+}
+
+.navbar-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(12px, 2vw, 16px);
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 clamp(20px, 4vw, 32px);
+}
+
+.bookmark-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #442F38;
+}
+
+.addLinkBtn {
+  background-color: #442F38;
+  color: white;
+  height: clamp(40px, 6vh, 48px);
+  width: min(clamp(200px, 25vw, 260px), 100%);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0 clamp(18px, 3vw, 24px);
+}
+
+@media (max-width: 768px) {
+  .navbar-content-container {
+    padding: 0 clamp(16px, 3vw, 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: clamp(12px, 2vh, 14px) 0;
+  }
+
+  .navbar-content-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 clamp(12px, 3vw, 16px);
+  }
+
+  .bookmark-title {
+    text-align: center;
+  }
+
+  .addLinkBtn {
+    width: 100%;
+    max-width: clamp(200px, 25vw, 260px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .addLinkBtn {
+    height: 38px;
+  }
+}
+
+@media (max-width: 360px) {
+  .addLinkBtn {
+    height: 34px;
+    font-size: 0.85rem;
+  }
+}
+

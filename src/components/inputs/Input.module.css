@@ -1,0 +1,53 @@
+.button {
+  height: auto;
+  width: auto;
+  min-height: clamp(36px, 6vh, 44px);
+  min-width: clamp(80px, 15vw, 100px);
+  cursor: pointer;
+  border-radius: clamp(8px, 2vw, 10px);
+  border: none;
+  color: #442F38;
+  background-color: #F6E8D8;
+  padding: 0 clamp(14px, 2vw, 18px);
+  font-family: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(68, 47, 56, 0.12);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 1vh, 6px);
+  margin-bottom: clamp(16px, 3vh, 20px);
+}
+
+.label {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  font-weight: 600;
+  color: #2D2D3A;
+}
+
+.input {
+  width: 100%;
+  padding: clamp(10px, 2vh, 12px) clamp(12px, 2vw, 14px);
+  border: 2px solid #E5E0F5;
+  border-radius: clamp(6px, 2vw, 8px);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: inherit;
+  color: #2D2D3A;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6C5CE7;
+}
+
+.error-text {
+  color: #FF5C5C;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+}
