@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './AddLinkForm.module.css'
 import { TextInput } from '../../inputs/TextInput'
 import { Button } from '../../inputs/Button'
@@ -25,38 +25,13 @@ type AddLinkFormProps = {
 
 export const AddLinkForm: React.FC<AddLinkFormProps> = ({ onAddLink, onUpdateLink, onClose, linkToEdit }) => {
 
-  const [title, setTitle] = useState('')
-  const [url, setUrl] = useState('')
-  const [description, setDescription] = useState('')
-  const [tags, setTags] = useState('')
+  const [title, setTitle] = useState(linkToEdit?.title ?? '')
+  const [url, setUrl] = useState(linkToEdit?.url ?? '')
+  const [description, setDescription] = useState(linkToEdit?.description ?? '')
+  const [tags, setTags] = useState(linkToEdit?.tags.join(', ') ?? '')
 
   const [titleError, setTitleError] = useState('')
   const [urlError, setUrlError] = useState('')
-
-  useEffect(() => {
-
-    if (linkToEdit) {
-
-      const [title, setTitle] = useState(linkToEdit?.title)
-      const [url, setUrl] = useState(linkToEdit?.url)
-      const [description, setDescription] = useState(linkToEdit?.description)
-      const [tags, setTags] = useState(linkToEdit.tags.join(', '))
-
-    } else {
-
-      const [title, setTitle] = useState('')
-      const [url, setUrl] = useState('')
-
-      const [description, setDescription] = useState('')
-
-      const [tags, setTags] = useState('')
-
-    }
-
-  const [titleError, setTitleError] = useState('')
-  const [urlError, setUrlError] = useState('')
-
-  }, [linkToEdit])
 
   const handleSubmit = (e: React.FormEvent) => {
 
