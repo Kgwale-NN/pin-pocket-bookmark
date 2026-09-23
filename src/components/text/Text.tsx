@@ -1,5 +1,4 @@
-import React, { type ReactNode } from 'react'
-import styles from './Text.module.css'
+import React from 'react'
 
 type TextProps ={
 
