@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { Navbar } from './components/navbar/Navbar'
 import { Footer } from './components/footer/Footer'
@@ -11,7 +11,10 @@ import type { LinkItem } from './components/body/addLinkForm/AddLinkForm'
 import Bookmark from './assets/undraw_save-to-bookmarks_9o51-removebg-preview.png'
 
 function App() {
-  const [links, setLinks] = useState<LinkItem[]>([])
+  const [links, setLinks] = useState<LinkItem[]>(() => {
+    const savedLinks = localStorage.getItem('links')
+    return savedLinks ? JSON.parse(savedLinks) : []
+  })
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingLink, setEditingLink] = useState<LinkItem | null>(null)
   const [notification, setNotification] = useState<string | null>(null)
@@ -74,14 +77,6 @@ function App() {
     localStorage.setItem('links', JSON.stringify(updatedLinks))
     showNotification('Link updated!')
   }
-
-  useEffect(() => {
-    const savedLinks = localStorage.getItem('links')
-
-    if (savedLinks) {
-      setLinks(JSON.parse(savedLinks))
-    }
-  }, [])
 
   return (
     <div className="app-shell">

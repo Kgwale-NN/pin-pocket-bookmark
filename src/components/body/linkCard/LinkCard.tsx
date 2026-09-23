@@ -28,7 +28,7 @@ const getTagColor = (tag: string) => {
 
 }
 
-export const LinkCard:React.FC<LinkCardProps> = ({link, onEdit, onDelete}) => {
+export const LinkCard: React.FC<LinkCardProps> = ({ link, onEdit, onDelete }) => {
 
     const faviconUrl = `https://www.google.com/s2/favicons?domain=${link.url}&sz=64`
 
