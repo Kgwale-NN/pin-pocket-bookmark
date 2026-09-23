@@ -3,8 +3,6 @@ import styles from './Navbar.module.css'
 import { Button } from '../inputs/Button'
 import {Text} from '../text/Text'
 
-import Logo from '../../assets/agenda.png'
-
 type NavbarProps = {
 
   onAddLinkClick: () => void
